@@ -1,0 +1,247 @@
+/**
+ * APEXPLANET SOFTWARE PVT. LTD. — FULL STACK WEB DEVELOPMENT INTERNSHIP
+ * Task 5: Capstone Project — E-Learning Portal (LMS)
+ * File: css/style.css
+ * 
+ * Global Responsive Stylesheet & Modern UI Theme
+ * Author: G. Praveen
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --primary-color: #4f46e5;
+    --primary-hover: #4338ca;
+    --primary-light: #eef2ff;
+    --secondary-color: #0f172a;
+    --surface-card: #ffffff;
+    --surface-bg: #f8fafc;
+    --border-color: #e2e8f0;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --success-accent: #10b981;
+    --warning-accent: #f59e0b;
+    --danger-accent: #ef4444;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: var(--surface-bg);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar Customization */
+.navbar-brand {
+    font-weight: 800;
+    font-size: 1.35rem;
+    letter-spacing: -0.5px;
+}
+
+.navbar-brand span {
+    color: var(--primary-color);
+}
+
+.nav-link {
+    font-weight: 500;
+    color: #334155 !important;
+    transition: color 0.15s ease-in-out;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+/* Cards & Containers */
+.custom-card {
+    background: var(--surface-card);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.custom-card:hover {
+    box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.08);
+}
+
+.course-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.course-thumbnail-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 aspect ratio */
+    background: #0f172a;
+    overflow: hidden;
+}
+
+.course-thumbnail-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.course-card:hover .course-thumbnail-img {
+    transform: scale(1.04);
+}
+
+/* Category Badge on Thumbnail */
+.badge-category {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    backdrop-filter: blur(8px);
+    background: rgba(15, 23, 42, 0.75);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 0.35rem 0.75rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Simulated Email Delivery Box (LMS Feature) */
+.simulated-email-box {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border: 1px solid #334155;
+    border-radius: 1rem;
+    color: #f8fafc;
+    position: relative;
+    overflow: hidden;
+}
+
+.simulated-email-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #6366f1, #38bdf8, #10b981);
+}
+
+.otp-digit-display {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2.25rem;
+    font-weight: 800;
+    letter-spacing: 0.5rem;
+    color: #38bdf8;
+    background: rgba(15, 23, 42, 0.6);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px dashed #0284c7;
+    display: inline-block;
+}
+
+.otp-input-field {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.75rem;
+    letter-spacing: 0.5rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+/* LMS Video & Learning Interface */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    background: #000000;
+}
+
+.video-container iframe,
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.syllabus-list-group .list-group-item {
+    border-left: 3px solid transparent;
+    transition: all 0.15s ease;
+}
+
+.syllabus-list-group .list-group-item.active-lesson {
+    border-left-color: var(--primary-color);
+    background-color: var(--primary-light);
+    color: var(--primary-hover);
+    font-weight: 600;
+}
+
+.syllabus-list-group .list-group-item:hover:not(.active-lesson) {
+    background-color: #f1f5f9;
+}
+
+/* Statistics Counter Cards */
+.stat-widget {
+    border-radius: 1rem;
+    padding: 1.5rem;
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%);
+    color: #ffffff;
+    padding: 5rem 0 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-glow {
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.25) 0%, rgba(0, 0, 0, 0) 70%);
+    pointer-events: none;
+}
+
+/* Footer Styling */
+footer {
+    margin-top: auto;
+    background-color: #0b0f19;
+    color: #94a3b8;
+    border-top: 1px solid #1e293b;
+}
+
+footer a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+footer a:hover {
+    color: #ffffff;
+}
