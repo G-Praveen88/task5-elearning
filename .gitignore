@@ -2,3 +2,4 @@ uploads/*
 !uploads/.gitkeep
 *.log
 .DS_Store
+task5-elearning.zip 
