@@ -36,16 +36,13 @@ function base_url(string $path = ''): string {
         if (preg_match('#^(.*?/task5-elearning)#i', $scriptDir, $matches)) {
             $detectedBase = $matches[1];
         } else {
-            $detectedBase = rtrim($scriptDir, '/');
-        }
+    $detectedBase = '';   // site is hosted at the domain root
+}
         $detectedBase = rtrim($detectedBase, '/');
-        if (empty($detectedBase)) {
-            $detectedBase = '/task5-elearning';
-        }
     }
 
     $cleanPath = ltrim($path, '/');
-    return ($cleanPath === '') ? $detectedBase : ($detectedBase . '/' . $cleanPath);
+        return ($cleanPath === '') ? ($detectedBase === '' ? '/' : $detectedBase) : ($detectedBase . '/' . $cleanPath);
 }
 
 /**

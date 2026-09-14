@@ -6,11 +6,6 @@
 -- Database Name: elearning_db
 -- =============================================================================
 
-CREATE DATABASE IF NOT EXISTS elearning_db 
-CHARACTER SET utf8mb4 
-COLLATE utf8mb4_unicode_ci;
-
-USE elearning_db;
 
 -- -----------------------------------------------------------------------------
 -- Disable foreign key checks during schema creation
